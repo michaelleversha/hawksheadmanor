@@ -3,15 +3,9 @@ import config
 
 user_name = config.user_name
 
-def type_text(text):
-    """Helper function to print text with a delay (typing effect)."""
-    for char in text:
-        print(char, end='', flush=True)
-        time.sleep(0.05)
-    print()
- 
+type_text = config.type_text
 
-def day_zero(skip_to_welcome=False):
+def tutorial(skip_to_welcome=False):
     # global game_score
     # global user_name
     while True:
