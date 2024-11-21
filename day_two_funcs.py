@@ -172,6 +172,7 @@ def day_two_additional_interviews():
 
 def study_search_day_two():
     global inventory
+    global game_score
     type_text("Do you")
     time.sleep(1)
     type_text("1. Take the evidence immediately to Mr Al-Jafar?")
