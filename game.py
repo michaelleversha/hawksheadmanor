@@ -14,7 +14,6 @@ day_one.day_one()
 day_two.day_two()
 day_three.day_three()
 day_four.day_four()
-# end_game() - not currently being used
  
 # End of the game (this is where you would call end_game to show the score)
 # Python Project | MYSTERY AT HAWKSHEAD MANOR

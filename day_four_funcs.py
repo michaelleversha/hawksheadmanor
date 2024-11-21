@@ -5,8 +5,10 @@ type_text = config.type_text
 user_name = config.user_name
 inventory = config.inventory
 suspect = config.suspect
+game_score = config.game_score
 
 def final_interviews():
+    global game_score
     type_text("You may only interview one guest! Choose carefully.")
     time.sleep(1)
     type_text("1. Lorie Turner")
@@ -33,6 +35,7 @@ def final_interviews():
         type_text("Her eyes dart briefly to Eleanor. 'Some people understand the true value of preservation.'")
         time.sleep(1)
         type_text("'Others... well, they would have seen it all scattered to the winds.'")
+        game_score -= 5
     elif user_choice in ["2", "two"]:
         type_text("'I... I should say something,' Oswald stammers, standing abruptly from his chair beside Lorie.")
         time.sleep(1)
@@ -43,6 +46,7 @@ def final_interviews():
         type_text("'I just want you to know that whatever you think happened, there must be an explanation.'")
         time.sleep(1)
         type_text("His wife gives him a filthy look as he retakes his seat.")
+        game_score -= 5
     elif user_choice in ["3", "three"]:
         type_text("'The s-security logs,' Peter interjects nervously, clutching his laptop.")
         time.sleep(1)
@@ -55,7 +59,7 @@ def final_interviews():
         type_text("He swallows hard. 'Just before everything happened.'")
         time.sleep(1)
         type_text("Mohamed Al-Jafar places a comforting hand on Peter's shoulder.")
-        time.sleep(1)
+        game_score -= 5
     elif user_choice in ["4", "four"]:
         type_text("'Since you invite me to speak freely,'' Mohamed says quietly from his corner, 'I should confirm what Dr. Ashford has likely told you.'")
         time.sleep(1)
@@ -66,6 +70,7 @@ def final_interviews():
         type_text("'Some...' his eyes sweep the room, 'were not pleased with this decision.'")
         time.sleep(1)
         type_text("He lapses back into silence")
+        game_score -= 5
     elif user_choice in ["5", "five"]:
         type_text("'As his physician,' Dr. Ashford says carefully, 'I feel I should mention that Lord Hugo was of completely sound mind when he made his recent decisions.'")
         time.sleep(1)
@@ -74,6 +79,7 @@ def final_interviews():
         type_text("And he knew...' he pauses significantly, 'he knew who might oppose those decisions.'")
         time.sleep(1)
         type_text("A crash of thunder punctuates the doctor's words.")
+        game_score -= 5
     elif user_choice in ["6", "six"]:
         type_text("'Oh, let's dispense with all this dramatic tension,' Eleanor cuts in, her voice sharp.")
         time.sleep(1)
@@ -82,6 +88,7 @@ def final_interviews():
         type_text("'They should be preserved, protected, kept in proper hands.' Her gaze fixes meaningfully on Lorie.")
         time.sleep(1)
         type_text("'Some of us understand the importance of legacy.'")
+        game_score -= 5
     elif user_choice in ["Seven", "7"]:
         type_text("You don't need to talk to any of this lot. You're best off moving on.")
     else:
@@ -173,7 +180,11 @@ def failed_ending():
     time.sleep(1)
     type_text("You came so close!")
     time.sleep(1)
-    type_text("GAME OVER")
+    print("  ____    _    __  __ _____    _____     _______ ____  ")
+    print(" / ___|  / \  |  \/  | ____|  / _ \ \   / / ____|  _ \ ")
+    print("| |  _  / _ \ | |\/| |  _|   | | | \ \ / /|  _| | |_) |")
+    print("| |_| |/ ___ \| |  | | |___  | |_| |\ V / | |___|  _ < ")
+    print(" \____/_/   \_\_|  |_|_____|  \___/  \_/  |_____|_| \_\ ")
     
 def bad_ending():
     type_text("Uh oh...!")
@@ -186,7 +197,11 @@ def bad_ending():
     time.sleep(1)
     type_text("This is very bad, for spurious reasons.")
     time.sleep(1)
-    type_text("GAME OVER")
+    print("  ____    _    __  __ _____    _____     _______ ____  ")
+    print(" / ___|  / \  |  \/  | ____|  / _ \ \   / / ____|  _ \ ")
+    print("| |  _  / _ \ | |\/| |  _|   | | | \ \ / /|  _| | |_) |")
+    print("| |_| |/ ___ \| |  | | |___  | |_| |\ V / | |___|  _ < ")
+    print(" \____/_/   \_\_|  |_|_____|  \___/  \_/  |_____|_| \_\ ")
 
 def good_ending():
     type_text("Well done!")
@@ -203,5 +218,9 @@ def good_ending():
     time.sleep(1)
     type_text("Mohamed Al-Jafar, the intended heir, decides to turn Hawkshead Manor into a public museum, ensuring the collection will be preserved and shared with the world.")
     time.sleep(1)
-    type_text("THE END")
-    time.sleep(1)
+    type_text(f"Congratulations! You solved the mystery and had enough evidence to see the killer put behind bars. Your final score is {game_score}")
+    print(" _____ _   _ _____   _____ _   _ ____  ")
+    print("|_   _| | | | ____| | ____| \ | |  _ \ ")
+    print("  | | | |_| |  _|   |  _| |  \| | | | |")
+    print("  | | |  _  | |___  | |___| |\  | |_| |")
+    print("  |_| |_| |_|_____| |_____|_| \_|____/ ")

@@ -6,6 +6,7 @@ user_name = config.user_name
 study_visit = config.study_visit
 drawing_room_visit = config.drawing_room_visit
 suspects = config.suspects
+game_score = config.game_score
 
 def arrival_choice():
     type_text("What would you like to do first?")
@@ -155,6 +156,8 @@ def meet_a_suspect():
 
 def turner_dialogue_one():
      global suspects 
+     global game_score
+     game_score -= 5
      suspects[0][1] = False
      type_text("You approach an elegantly dressed couple sitting near the fireplace.")
      time.sleep(1)
@@ -174,6 +177,8 @@ def turner_dialogue_one():
 
 def hawkshead_dialogue_one():
      suspects[1][1] = False
+     global game_score
+     game_score -= 5
      type_text("Your eyes settle on a regal-looking woman sitting alone in the corner of the room.")
      time.sleep(1)
      type_text("As you approach, she offers you a charming smile.")
@@ -194,6 +199,8 @@ def hawkshead_dialogue_one():
 
 def ashford_dialogue_one():
     suspects[2][1] = False
+    global game_score
+    game_score -= 5
     type_text("A calm, professional-looking man sits in a wingback chair, his hands folded neatly in his lap. As you approach, he rises to greet you.")
     time.sleep(1)
     type_text(f"'{user_name}, I presume?' he says, his voice level and controlled. 'I'm Dr. Victor Ashford, Hawkshead's personal physician.'")
@@ -214,6 +221,8 @@ def ashford_dialogue_one():
 
 def al_jafar_dialogue_one():
     suspects[3][1] = False
+    global game_score
+    game_score -= 5
     type_text("Your gaze falls upon a man sitting quietly in the corner, his eyes fixed on the flickering fire. As you approach, he looks up, his expression calm and composed.")
     time.sleep(1)
     type_text(f"'{user_name},' he says, his voice soft and measured. 'I'm Mohamed Al-Jafar, Lord Hugo Hawkshead's private tutor.'")
@@ -230,6 +239,8 @@ def al_jafar_dialogue_one():
 
 def smith_dialogue_one():
      suspects[4][1] = False
+     global game_score
+     game_score -= 5
      type_text("Your gaze settles on a somewhat shy-looking man sitting by himself in the corner of the room. As you approach, he looks up, his eyes widening slightly.")
      time.sleep(1)
      type_text(f"'{user_name}', he stammers, rising to his feet. 'I'm Peter Smith, the, uh, the IT engineer for Hawkshead Manor.'")

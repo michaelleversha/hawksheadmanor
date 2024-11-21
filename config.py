@@ -12,6 +12,7 @@ suspects = [
 suspect = "String"
 study_visit = False
 drawing_room_visit = False
+score = 0
 
 def type_text(text):
     """Helper function to print text with a delay (typing effect)."""

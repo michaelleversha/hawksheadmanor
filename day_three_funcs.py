@@ -4,6 +4,7 @@ import config
 type_text = config.type_text
 user_name = config.user_name
 inventory = config.inventory
+game_score = config.game_score
 
 def pick_a_location():
     type_text("Do you: ")
@@ -53,6 +54,7 @@ def pick_a_location():
 
 def kitchens():
     global inventory
+    global game_score
     type_text("Would you like to: ")
     time.sleep(1)
     type_text("1. Have something to eat.")
@@ -75,6 +77,7 @@ def kitchens():
         time.sleep(1)
         type_text("You file this away for later and head back to the main hall.")
         inventory.append("Eleanor's Note")
+        game_score += 10
         pick_a_location()
     else:
         type_text("That's not a valid option. Try again.")
@@ -82,6 +85,7 @@ def kitchens():
 
 def gardens():
     global inventory
+    global game_score
     type_text("Would you like to:")
     time.sleep(1)
     type_text("1. Search for evidence")
@@ -97,6 +101,7 @@ def gardens():
         time.sleep(1)
         type_text("You stuff the note into your pocket.")
         inventory.append("Study Map")
+        game_score += 10
         gardens()
     elif user_choice in ["2", "two"]:
         type_text("You find the groundskeeper, a Mary Pollard.")

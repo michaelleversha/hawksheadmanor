@@ -4,10 +4,12 @@ import config
 type_text = config.type_text
 user_name = config.user_name
 inventory = config.inventory
+game_score = config.game_score
 
 ### DAY TWO  INTERVIEW FUNCTIONS
 
 def lorie_turner_day_two():
+    global game_score
     type_text("Do you:")
     time.sleep(1)
     type_text("1. Ask about her research with Lord Hugo?")
@@ -24,6 +26,7 @@ def lorie_turner_day_two():
         type_text("'Lord Hugo had quite the collection. I was helping him authenticate several pieces, including...' she pauses, 'including the dagger that was used to kill him.'")
         time.sleep(1)
         type_text("You make a note in your jotter. 'Thank you, Mrs Turner. That will be all for now.'")
+        game_score -= 5
         day_two_interviews()
     elif user_choice in ["2", "two"]:
         type_text("'Eleanor? Oh yes, she's been very... interested in my work here.'")
@@ -31,12 +34,14 @@ def lorie_turner_day_two():
         type_text("'Particularly regarding Lord Hugo's collection. She seemed quite concerned about its future.'")
         time.sleep(1)
         type_text("You make a note in your jotter. 'Thank you, Mrs Turner. That will be all for now.'")
+        game_score -= 5
         day_two_interviews()
     else:
         type_text("That wasn't a valid option. Try again.")
         lorie_turner_day_two()
 
 def victor_ashford_day_two():
+    global game_score
     type_text("You find Victor Ashford in the library, reading the morning papers. He has a refined air of authority about him.")
     time.sleep(1)
     type_text("'Please, call me Victor,' he requests, as you ask him for a few minutes of his time.")
@@ -50,9 +55,11 @@ def victor_ashford_day_two():
     type_text("'It was to be announced at dinner tonight.'")
     time.sleep(1)
     type_text("You thank Victor for his time and leave him to his paper.")
+    game_score -= 5
     day_two_interviews()
 
 def eleanor_day_two():
+    global game_score
     type_text("You begin by asking Eleanor about her relationship with Lord Hugo.")
     time.sleep(1)
     type_text("She admits that she was never particularly close with him, but states that without a son, she had recently moved back in order to keep a close eye on him - and the house.")
@@ -68,9 +75,11 @@ def eleanor_day_two():
     type_text("Lady Hawkshead pushes past you, and returns to the drawing room.")
     time.sleep(1)
     type_text("You sigh to yourself, and follow her into the adjoining room.")
+    game_score -= 5
     day_two_additional_interviews()
 
 def oswald_turner_day_two():
+    global game_score
     type_text("Your first impressions of Oswald have been distinctly negative.")
     time.sleep(1)
     type_text("Though he maintains a jovial external facade, this quickly comes crashing down as you ask him to join you next door.")
@@ -82,9 +91,11 @@ def oswald_turner_day_two():
     type_text("'I-I just do whatever Lorie thinks is best,' he stammers. 'She's the expert, after all. Though lately, she's been meeting with Eleanor quite frequently...'")
     time.sleep(1)
     type_text("You aren't getting much more out of this man. You thank him and tell him you have no questions after all.")
+    game_score -= 5
     day_two_additional_interviews()
 
 def peter_smith_day_two():
+    global game_score
     type_text("Out of everyone you've spoken to so far, Peter Smith gives away the least information through body language and social cues.")
     time.sleep(1)
     type_text("You decide a more direct approach might work best here.")
@@ -96,6 +107,7 @@ def peter_smith_day_two():
     type_text("Unfortunately, I can't say who. I was up playing backgammon with Mohamed until late that evening.")
     time.sleep(1)
     type_text("You thank Mr. Smith and allow him to return to the drawing room, before following him through the door.")
+    game_score -= 5
     day_two_additional_interviews()
     
 def day_two_interviews():
@@ -187,6 +199,7 @@ def study_search_day_two():
         type_text("Behind a loose panel, you find a notebook filled with Lorie's handwriting - detailed notes about each Egyptian artefact's value and authenticity.")
         type_text("You stow this notebook in your pocket, and return to the downstairs lobby.")
         inventory.append("Lorie's Notebook")
+        game_score += 10
         day_two_actions()
     else:
         type_text("That wasn't an option.")
@@ -215,6 +228,7 @@ def day_two_actions():
         time.sleep(1)
         type_text("It appears to be a draft of a new will, with Mohamed Al-Jafar's name visible.")
         inventory.append("Hugo's Will")
+        game_score += 10
         time.sleep(1)
         study_search_day_two()
     elif user_choice in ["3", "three"]:
