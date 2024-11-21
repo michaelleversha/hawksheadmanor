@@ -29,7 +29,7 @@ def day_two():
     day_two_funcs.day_two_actions()
     type_text("They seem somewhat aggrieved by your continued presence, but agree that you can talk to each of them in private if you would like to.")
     day_two_funcs.day_two_additional_interviews()
-    type_text("As you sit at the absurd stone hewn desk in your bedroom that evening, you mull over the day's discoveries.")
+    type_text("As you sit at the absurd hewn stone desk in your bedroom that evening, you mull over the day's discoveries.")
     time.sleep(1)
     type_text("There’s nothing more to do tonight other than to sleep on things. ")
     time.sleep(1)

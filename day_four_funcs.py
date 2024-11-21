@@ -187,6 +187,7 @@ def failed_ending():
     print(" \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\ ")
     
 def bad_ending():
+    global suspect
     type_text("Uh oh...!")
     time.sleep(1)
     type_text(f"{suspect} spends several weeks in police custody at your direction, but ultimately the court finds no evidence that solidly links them to the crime.")
@@ -204,6 +205,7 @@ def bad_ending():
     print(" \\____/_/   \\_\\_|  |_|_____|  \\___/  \\_/  |_____|_| \\_\\ ")
 
 def good_ending():
+    global game_score
     type_text("Well done!")
     time.sleep(1)
     type_text("The truth emerges: Eleanor Hawkshead, desperate to keep the estate in the family, manipulated Lorie Turner's academic passion into something darker. ")
