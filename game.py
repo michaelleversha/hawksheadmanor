@@ -1,3 +1,5 @@
+# Python Project | MYSTERY AT HAWKSHEAD MANOR
+
 # Module Imports
 # --------------
 import tutorial
@@ -15,7 +17,6 @@ day_two.day_two()
 day_three.day_three()
 day_four.day_four()
  
-# Python Project | MYSTERY AT HAWKSHEAD MANOR
 # --------------
 # Credits:
 # Michael Leversha
