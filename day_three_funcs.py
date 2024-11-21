@@ -71,14 +71,18 @@ def kitchens():
         type_text("Satisfied, you forget why you came into the kitchen, and return to the main hall.")
         pick_a_location()
     elif user_choice in ["2", "two"]:
-        type_text("You discover a crumpled note in the kitchen waste bin - a message in Eleanor's handwriting.")
-        time.sleep(1)
-        type_text("It reads: 'The collection must be protected at all costs. He cannot give it away.'")
-        time.sleep(1)
-        type_text("You file this away for later and head back to the main hall.")
-        inventory.append("Eleanor's Note")
-        game_score += 10
-        pick_a_location()
+        if "Eleanor's Note" in inventory:
+            type_text("You've searched the kitchen from top to bottom. All that's here now are hints about what might be for lunch...")
+            pick_a_location()
+        else:
+            type_text("You discover a crumpled note in the kitchen waste bin - a message in Eleanor's handwriting.")
+            time.sleep(1)
+            type_text("It reads: 'The collection must be protected at all costs. He cannot give it away.'")
+            time.sleep(1)
+            type_text("You file this away for later and head back to the main hall.")
+            inventory.append("Eleanor's Note")
+            game_score += 10
+            pick_a_location()
     else:
         type_text("That's not a valid option. Try again.")
         kitchens()
@@ -97,12 +101,16 @@ def gardens():
     user_choice = input("One (1) or Two (2): ").strip().lower()
 
     if user_choice in ["1", "one"]:
-        type_text("Near the rose bushes, you find a hand-drawn map of the study's layout, with expert notes  about the location of each artefact and its potential value.")
-        time.sleep(1)
-        type_text("You stuff the note into your pocket.")
-        inventory.append("Study Map")
-        game_score += 10
-        gardens()
+        if "Study Map" in inventory:
+            type_text("You've searched the grounds thoroughly. You can't find anything else.")
+            gardens()
+        else:
+            type_text("Near the rose bushes, you find a hand-drawn map of the study's layout, with expert notes  about the location of each artefact and its potential value.")
+            time.sleep(1)
+            type_text("You stuff the note into your pocket.")
+            inventory.append("Study Map")
+            game_score += 10
+            gardens()
     elif user_choice in ["2", "two"]:
         type_text("You find the groundskeeper, a Mary Pollard.")
         time.sleep(1)

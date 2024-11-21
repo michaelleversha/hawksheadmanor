@@ -197,11 +197,15 @@ def study_search_day_two():
         type_text("That's enough time in the study. You need to talk to more people about this bizarre crime.")
         day_two_actions()
     elif user_choice in ["2", "two"]:
-        type_text("Behind a loose panel, you find a notebook filled with Lorie's handwriting - detailed notes about each Egyptian artefact's value and authenticity.")
-        type_text("You stow this notebook in your pocket, and return to the downstairs lobby.")
-        inventory.append("Lorie's Notebook")
-        game_score += 10
-        day_two_actions()
+        if "Lorie's Notebook" in inventory:
+            type_text("There's nothing else here.")
+            day_two_actions()
+        else:
+            type_text("Behind a loose panel, you find a notebook filled with Lorie's handwriting - detailed notes about each Egyptian artefact's value and authenticity.")
+            type_text("You stow this notebook in your pocket, and return to the downstairs lobby.")
+            inventory.append("Lorie's Notebook")
+            game_score += 10
+            day_two_actions()
     else:
         type_text("That wasn't an option.")
         study_search_day_two()
@@ -226,13 +230,16 @@ def day_two_actions():
     if user_choice in ["1", "one"]:
         day_two_interviews()
     elif user_choice in ["2", "two"]:
-        type_text("In the morning light, you notice something you missed before - a partially burned letter in the fireplace.")
-        time.sleep(1)
-        type_text("It appears to be a draft of a new will, with Mohamed Al-Jafar's name visible.")
-        inventory.append("Hugo's Will")
-        game_score += 10
-        time.sleep(1)
-        study_search_day_two()
+        if "Hugo's Will" in inventory:
+            type_text("You can't find anything else, try as you might.")
+            study_search_day_two()
+        else:
+            type_text("In the morning light, you notice something you missed before - a partially burned letter in the fireplace.")
+            time.sleep(1)
+            type_text("It appears to be a draft of a new will, with Mohamed Al-Jafar's name visible.")
+            inventory.append("Hugo's Will")
+            game_score += 10
+            study_search_day_two()
     elif user_choice in ["3", "three"]:
         type_text("Eleanor Hawkshead, Oswald Turner and Peter Smith are gathered in the drawing room.")
         time.sleep(1)
