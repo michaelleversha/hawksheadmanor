@@ -8,9 +8,9 @@ import day_three
 import day_four
 
 # CALLING FUNCTIONS TO PLAY GAME
-# tutorial.tutorial()
-# day_zero.day_zero()
-# day_one.day_one()
+tutorial.tutorial()
+day_zero.day_zero()
+day_one.day_one()
 day_two.day_two()
 day_three.day_three()
 day_four.day_four()
