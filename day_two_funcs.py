@@ -207,6 +207,7 @@ def study_search_day_two():
 
 def day_two_actions():
     global inventory
+    global game_score
     type_text("Do you:")
     time.sleep(1)
     type_text("1. Start conducting interviews immediately")
