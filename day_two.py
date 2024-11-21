@@ -22,6 +22,7 @@ def day_two():
     type_text("...")
     time.sleep(1)
     type_text("...")
+    time.sleep(1)
     type_text("You wake to another gloomy morning at Hawkshead Manor.")
     time.sleep(1)
     type_text("The rain continues to drum against your window as you consider your first move of the day.")
